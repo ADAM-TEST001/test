@@ -10,7 +10,7 @@ const crypto = require('crypto');
 const app = express();
 connect_db();
 
-
+app.use(cors());
 
 app.use(morgan("dev"));
 app.use(express.json());
