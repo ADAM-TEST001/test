@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 const crypto = require('crypto');
 
 const app = express();
+connect_db();
 
 
 
@@ -71,7 +72,6 @@ async function sendVerificationEmail(email, token) {
 // Route to register a new user
 app.post('/register', async (req, res) => {
     const { email } = req.body.userDetails;
-     await connect_db();
 
     // Generate token
     const token = generateToken();
