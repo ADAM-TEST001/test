@@ -14,7 +14,7 @@ const app = express();
 app.use(morgan("dev"));
 app.use(express.json());
 
-    await connect_db();
+     connect_db();
 
 
 app.get('/test', async (req, res) => {
