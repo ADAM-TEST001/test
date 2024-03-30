@@ -16,7 +16,7 @@ app.use(morgan("dev"))
 app.use(express.json())
 
 app.get('/test', async (req, res) => {
-        res.json({"done"});
+     return   res.json("done");
    
 });
 
