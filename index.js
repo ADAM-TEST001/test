@@ -75,7 +75,7 @@ app.post('/register', async (req, res) => {
 
     // Save token in MongoDB
     try {
-        // await Token.create({ email, token });
+        await Token.create({ email, token });
         // Send verification email
         await sendVerificationEmail(email, token);
         res.json({ message: 'Verification email sent' });
