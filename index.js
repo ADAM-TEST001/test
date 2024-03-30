@@ -10,11 +10,11 @@ const morgan = require('morgan')
 const app = express()
 
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET, PUT, POST");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
-
 
 
 app.use(morgan("dev"))
@@ -38,7 +38,7 @@ app.post('/register', async (req, res) => {
 
     // Save token in MongoDB
     try {
-        await Token.create({ email, token });
+        // await Token.create({ email, token });
         // Send verification email
         sendVerificationEmail(email, token);
         res.json({ message: 'Verification email sent' });
