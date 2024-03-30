@@ -8,7 +8,6 @@ const mongoose = require('mongoose');
 const crypto = require('crypto');
 
 const app = express();
-connect_db();
 
 app.use(cors());
 
@@ -107,6 +106,7 @@ app.get('/verify', async (req, res) => {
 });
 
 app.listen(5000, async () => {
+await connect_db();
      
     console.log("server is up");
 });
