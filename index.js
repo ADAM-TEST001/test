@@ -35,11 +35,11 @@ const Token = mongoose.model('Token', tokenSchema);
 
 // Nodemailer transporter configuration
 const transporter = nodemailer.createTransport({
-    service: 'gmail',
+     service: 'gmail',
     auth: {
-        user: 'your_gmail_address@gmail.com',
-        pass: 'your_gmail_password'
-    }
+        user: 'test.adam011@gmail.com',
+        pass: 'bxpu mmxl begv xdti '
+    },
 });
 
 // Generate a unique token
