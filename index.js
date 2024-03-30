@@ -71,6 +71,7 @@ async function sendVerificationEmail(email, token) {
 // Route to register a new user
 app.post('/register', async (req, res) => {
     const { email } = req.body.userDetails;
+     await connect_db();
 
     // Generate token
     const token = generateToken();
@@ -106,7 +107,6 @@ app.get('/verify', async (req, res) => {
 });
 
 app.listen(5000, async () => {
-     await connect_db();
      
     console.log("server is up");
 });
