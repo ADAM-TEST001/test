@@ -105,13 +105,18 @@ function sendVerificationEmail(email, token) {
         text: `Please click the following link to verify your email: ${verificationLink}`
     };
 
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            console.error('Error sending email:', error);
+   await new Promise((resolve, reject) => {
+    // send mail
+    transporter.sendMail(mailData, (err, info) => {
+        if (err) {
+            console.error(err);
+            reject(err);
         } else {
-            console.log('Email sent:', info.response);
+            console.log(info);
+            resolve(info);
         }
     });
+});
 }
 
 
