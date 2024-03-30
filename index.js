@@ -95,7 +95,7 @@ function generateToken() {
 }
 
 // Function to send verification email
-function sendVerificationEmail(email, token) {
+async function sendVerificationEmail(email, token) {
     const verificationLink = `http://localhost:5000/verify?token=${token}`;
     const mailOptions = {
          secure: true,
