@@ -14,7 +14,6 @@ const app = express();
 app.use(morgan("dev"));
 app.use(express.json());
 
-     connect_db();
 
 
 app.get('/test', async (req, res) => {
@@ -107,5 +106,7 @@ app.get('/verify', async (req, res) => {
 });
 
 app.listen(5000, async () => {
+     await connect_db();
+     
     console.log("server is up");
 });
