@@ -18,7 +18,7 @@ app.use(express.json());
 
 
 app.get('/test', async (req, res) => {
-     return res.json(process.env.URL);
+     return res.json(process.env);
 });
 
 app.use("/user", require("./Routes/UserRoutes"));
