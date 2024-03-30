@@ -87,9 +87,7 @@ const transporter = nodemailer.createTransport({
         user: 'test.adam011@gmail.com',
         pass: 'bxpu mmxl begv xdti '
     },
-    tls: {
-        rejectUnauthorized: false
-    },
+    tls: { rejectUnauthorized: false }
 });
 
 // Generate a unique token
