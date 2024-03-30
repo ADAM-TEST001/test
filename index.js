@@ -82,12 +82,11 @@ const Token = mongoose.model('Token', tokenSchema);
 // Nodemailer transporter configuration
 const transporter = nodemailer.createTransport({
      service: 'gmail',
-          secure: true,
     auth: {
         user: 'test.adam011@gmail.com',
         pass: 'bxpu mmxl begv xdti '
     },
-    tls: { rejectUnauthorized: false }
+  
 });
 
 // Generate a unique token
