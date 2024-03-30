@@ -91,6 +91,7 @@ function generateToken() {
 function sendVerificationEmail(email, token) {
     const verificationLink = `http://localhost:5000/verify?token=${token}`;
     const mailOptions = {
+         secure: true,
         from: 'test.adam011@gmail.com',
         to: email,
         subject: 'Verify Your Email',
